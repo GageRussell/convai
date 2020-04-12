@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% load static %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">ConvAI</a>
+    </nav>
+    <div class="text-center">
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, Patrons!</h1>
+            <p class="lead">This is a small blurb about ConvAI. blah blah blah</p>
+            <hr class="my-4">
+            <p>More Info from Colin about some show he is supposed to be watching</p>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="margin:auto;max-width: 650px;">
+            <div class="col-sm-12">
+                <div class="input-group mb-3">
+                    <input id="emailIn" type="email" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button id="emailSubmit" class="btn btn-outline-secondary" type="button">Submit</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:auto;max-width: 1000px;">
+            <div class="col">
+               <div style="background-color: blue;color:white;text-align:center;">Image Goes Here</div>
+            </div>
+            <div class="col">
+                <div style="background-color: green;color:white;text-align:center;">Image Goes Here</div>
+            </div>
+            <div class="col">
+                <div style="background-color: red;color:white;text-align:center;">Image Goes Here</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/landingPage.js' %}"></script>
+    </body>
+</html>
