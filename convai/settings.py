@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'chat',
+    'channels',
     'landingPage.apps.LandingpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,18 +78,22 @@ WSGI_APPLICATION = 'convai.wsgi.application'
 
 DATABASES = {
 
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'CLIENT': {
+    #         'host': 'mongodb+srv://admin:admin@analyticstest-t4mfg.gcp.mongodb.net/test?retryWrites=true&w=majority',
+    #         'username': 'admin',
+    #         'password': 'admin',
+    #         'authMechanism': 'SCRAM-SHA-1'
+    #     }
+    #     # 'NAME': 'test',
+    #     # 'USER': 'admin',
+    #     # 'PASSWORD': 'admin',
+    #     # 'HOST': 'mongodb+srv://admin:admin@analyticstest-t4mfg.gcp.mongodb.net/test?retryWrites=true&w=majority'
+    # }
     'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {
-            'host': 'mongodb+srv://admin:admin@analyticstest-t4mfg.gcp.mongodb.net/test?retryWrites=true&w=majority',
-            'username': '',
-            'password': '',
-            'authMechanism': 'SCRAM-SHA-1'
-        }
-        # 'NAME': 'test',
-        # 'USER': 'admin',
-        # 'PASSWORD': 'admin',
-        # 'HOST': 'mongodb+srv://admin:admin@analyticstest-t4mfg.gcp.mongodb.net/test?retryWrites=true&w=majority'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 #mongodb+srv://admin:admin@nalyticstest-t4mfg.gcp.mongoadb.net/test?retryWrites=true&w=majority
@@ -133,3 +139,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+ASGI_APPLICATION = 'convai.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}

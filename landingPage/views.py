@@ -9,11 +9,22 @@ import datetime
 def index(request):
     return render(request, "index.html")
 
-def email(request):
-    #New Row
-    new_user = Convai.objects.create(email='grussell')
-    #update existing
-    new_user = Convai.objects.get(email='grussell')
-    new_user.email = 'colin'
-    new_user.save()
-    return HttpResponse("Success!")
+# def email(request):
+#
+#     # TODO - pass data from webpage to function
+#     #New Row
+#     new_user = Convai.objects.create(email='grussell')
+#     #update existing
+#     new_user = Convai.objects.get(email='grussell')
+#     new_user.email = 'colin'
+#     new_user.save()
+#     return HttpResponse("Success!")
+
+
+def chat(request):
+    return render(request, 'chat.html')
+
+def room(request, room_name):
+    return render(request, 'room.html', {
+        'room_name': room_name
+    })
